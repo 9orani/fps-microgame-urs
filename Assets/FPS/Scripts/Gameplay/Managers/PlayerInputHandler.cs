@@ -1,5 +1,6 @@
 ﻿using Unity.FPS.Game;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace Unity.FPS.Gameplay
 {
