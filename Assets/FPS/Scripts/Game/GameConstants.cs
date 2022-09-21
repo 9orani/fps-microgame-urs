@@ -21,9 +21,11 @@
         public const string k_ButtonNameSwitchWeapon = "Mouse ScrollWheel";
         public const string k_ButtonNameGamepadSwitchWeapon = "Gamepad Switch";
         public const string k_ButtonNameNextWeapon = "NextWeapon";
-        public const string k_ButtonNamePauseMenu = "Pause Menu";
+        // public const string k_ButtonNamePauseMenu = "Pause Menu";
+        public const string k_ButtonNamePauseMenu = "tab";
         public const string k_ButtonNameSubmit = "Submit";
-        public const string k_ButtonNameCancel = "Cancel";
+        // public const string k_ButtonNameCancel = "Cancel";
+        public const string k_ButtonNameCancel = "escape";
         public const string k_ButtonReload = "Reload";
     }
 }

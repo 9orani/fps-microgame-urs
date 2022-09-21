@@ -2,6 +2,7 @@
 using Unity.FPS.Gameplay;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Controls;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
@@ -64,20 +65,20 @@ namespace Unity.FPS.UI
         void Update()
         {
             // Lock cursor when clicking outside of menu
-            if (!MenuRoot.activeSelf && Input.GetMouseButtonDown(0))
+            if (!MenuRoot.activeSelf && Mouse.current.leftButton.wasPressedThisFrame)
             {
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
             }
 
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Keyboard.current[Key.Escape].wasPressedThisFrame)
             {
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
             }
 
-            if (Input.GetButtonDown(GameConstants.k_ButtonNamePauseMenu)
-                || (MenuRoot.activeSelf && Input.GetButtonDown(GameConstants.k_ButtonNameCancel)))
+            if (((KeyControl)Keyboard.current[GameConstants.k_ButtonNamePauseMenu]).wasPressedThisFrame
+                || (MenuRoot.activeSelf && ((KeyControl)Keyboard.current[GameConstants.k_ButtonNameCancel]).wasPressedThisFrame))
             {
                 if (ControlImage.activeSelf)
                 {
@@ -88,8 +89,8 @@ namespace Unity.FPS.UI
                 SetPauseMenuActivation(!MenuRoot.activeSelf);
 
             }
-
-            if (Input.GetAxisRaw(GameConstants.k_AxisNameVertical) != 0)
+            
+            if (Keyboard.current.wKey.wasPressedThisFrame || Keyboard.current.sKey.wasPressedThisFrame)
             {
                 if (EventSystem.current.currentSelectedGameObject == null)
                 {
