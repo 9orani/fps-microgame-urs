@@ -48,7 +48,7 @@ namespace Unity.FPS.Gameplay
             return Cursor.lockState == CursorLockMode.Locked && !m_GameFlowManager.GameIsEnding;
         }
 
-        protected float getAxisRaw(string axis){
+        protected float getAxisRawKeyboard(string axis){
             if(axis == GameConstants.k_AxisNameHorizontal){
                 return getAxisRawHorizental();
             }
@@ -60,10 +60,10 @@ namespace Unity.FPS.Gameplay
             }
         }
         protected float getAxisRawHorizental(){
-            if(Keyboard.current.dKey.wasPressedThisFrame){
+            if(Keyboard.current.dKey.isPressed){
                 return 1.0f;
             }
-            else if(Keyboard.current.aKey.wasPressedThisFrame){
+            else if(Keyboard.current.aKey.isPressed){
                 return -1.0f;
             }
             else{
@@ -71,10 +71,10 @@ namespace Unity.FPS.Gameplay
             }
         }
         protected float getAxisRawVertical(){
-            if(Keyboard.current.wKey.wasPressedThisFrame){
+            if(Keyboard.current.wKey.isPressed){
                 return 1.0f;
             }
-            else if(Keyboard.current.sKey.wasPressedThisFrame){
+            else if(Keyboard.current.sKey.isPressed){
                 return -1.0f;
             }
             else{
@@ -85,8 +85,8 @@ namespace Unity.FPS.Gameplay
         {
             if (CanProcessInput())
             {
-                Vector3 move = new Vector3(getAxisRaw(GameConstants.k_AxisNameHorizontal), 0f,
-                    getAxisRaw(GameConstants.k_AxisNameVertical));
+                Vector3 move = new Vector3(getAxisRawKeyboard(GameConstants.k_AxisNameHorizontal), 0f,
+                    getAxisRawKeyboard(GameConstants.k_AxisNameVertical));
 
                 // constrain move input to a maximum magnitude of 1, otherwise diagonal movement might exceed the max move speed defined
                 move = Vector3.ClampMagnitude(move, 1);
@@ -204,12 +204,11 @@ namespace Unity.FPS.Gameplay
         {
             if (CanProcessInput())
             {
-
-                string axisName = GameConstants.k_ButtonNameSwitchWeapon;
-
-                if (Input.GetAxis(axisName) > 0f)
+                float axis =  Mouse.current.scroll.y.ReadUnprocessedValue();
+                
+                if (axis > 0f)
                     return -1;
-                else if (Input.GetAxis(axisName) < 0f)
+                else if (axis < 0f)
                     return 1;
             }
 
@@ -250,7 +249,18 @@ namespace Unity.FPS.Gameplay
             if (CanProcessInput())
             {
                 // Check if this look input is coming from the mouse
-                float i = Input.GetAxisRaw(mouseInputName);
+                float i = 0.0f;
+
+                if(mouseInputName == GameConstants.k_MouseAxisNameHorizontal){
+                    i = Mouse.current.delta.x.ReadUnprocessedValue() / 20;
+                }
+                else if(mouseInputName == GameConstants.k_MouseAxisNameVertical){
+                    i = Mouse.current.delta.y.ReadUnprocessedValue() / -20;
+                }
+                else{
+                    i = 0.0f;
+                }
+
                 // handle inverting vertical input
                 if (InvertYAxis)
                     i *= -1f;

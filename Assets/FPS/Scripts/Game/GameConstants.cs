@@ -11,9 +11,10 @@
         public const string k_AxisNameJoystickLookHorizontal = "Look X";
         
         // public const string k_ButtonNameAim = "Aim";
-        public const string k_ButtonNameAim = "left shift";
+        public const string k_ButtonNameAim = "mouse 1";
         public const string k_ButtonNameFire = "Fire";
-        public const string k_ButtonNameSprint = "Sprint";
+        // public const string k_ButtonNameSprint = "Sprint";
+        public const string k_ButtonNameSprint = "leftshift";
         // public const string k_ButtonNameJump = "Jump";
         public const string k_ButtonNameJump = "space";
         // public const string k_ButtonNameCrouch = "Crouch";
