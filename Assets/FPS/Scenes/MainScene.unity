@@ -3229,6 +3229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   streams:
   - {fileID: 2729281214152228924}
+  - {fileID: 2729281214152228927}
 --- !u!114 &2729281214152228926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3254,6 +3255,28 @@ MonoBehaviour:
   handlers:
   - {fileID: 2729281214152228925}
   runOnAwake: 1
+--- !u!114 &2729281214152228927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2729281214152228923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: decb088abd7ec9747b6e9a1011c046b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  local: 0
+  label: 
+  m_Actions: {fileID: -944628639613478452, guid: d015c59204cb68b4fad557fd22348e56,
+    type: 3}
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: d4ba28fa-6486-491b-9c81-72bad2cc2d0f
+    m_ActionName: New action map/Look[/Mouse/delta]
+  m_DefaultActionMap: New action map
 --- !u!1001 &2729281214182533258
 PrefabInstance:
   m_ObjectHideFlags: 0
