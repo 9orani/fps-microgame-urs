@@ -157,6 +157,40 @@ Transform:
   m_Father: {fileID: 2729281213013248445}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &164944645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2729281214152228923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: decb088abd7ec9747b6e9a1011c046b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  local: 0
+  label: 
+  m_Actions: {fileID: -944628639613478452, guid: d015c59204cb68b4fad557fd22348e56,
+    type: 3}
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2729281214152228927}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: Look
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: d4ba28fa-6486-491b-9c81-72bad2cc2d0f
+    m_ActionName: New action map/Look[/Mouse/delta]
+  m_DefaultActionMap: New action map
 --- !u!4 &218425204 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2320371260222401683, guid: 1357d534d67e44349a4b7c67840165c7,
@@ -3229,7 +3263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   streams:
   - {fileID: 2729281214152228924}
-  - {fileID: 2729281214152228927}
+  - {fileID: 164944645}
 --- !u!114 &2729281214152228926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3242,7 +3276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 045786cf504bd7347842d6948241cbd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  urlSignaling: ws://localhost
+  urlSignaling: ws://localhost:8080
   signalingType: Unity.RenderStreaming.Signaling.WebSocketSignaling
   iceServers:
   - credential: 
@@ -3264,19 +3298,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2729281214152228923}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: decb088abd7ec9747b6e9a1011c046b2, type: 3}
+  m_Script: {fileID: 11500000, guid: a43bc22e9b0d5ea42af8214d7c221a36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  local: 0
-  label: 
-  m_Actions: {fileID: -944628639613478452, guid: d015c59204cb68b4fad557fd22348e56,
-    type: 3}
-  m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls: []
-    m_ActionId: d4ba28fa-6486-491b-9c81-72bad2cc2d0f
-    m_ActionName: New action map/Look[/Mouse/delta]
-  m_DefaultActionMap: New action map
 --- !u!1001 &2729281214182533258
 PrefabInstance:
   m_ObjectHideFlags: 0
